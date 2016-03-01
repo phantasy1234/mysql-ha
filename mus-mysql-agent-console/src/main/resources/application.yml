@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: mus-mysql-agent
+#  zipkin:
+#    # Uncomment to send to zipkin, replacing 192.168.99.100 with your zipkin IP address
+#    baseUrl: http://192.168.99.100:9411/
+#  rabbitmq:
+#    host: ${RABBIT_HOST:192.168.99.100}
+
+zookeeper:
+  zkServer: localhost:2181
+  sessionTimeoutMs: 10000
+  connectionTimeoutMs: 10000
+  baseSleepTimeMs: 1000
+  maxRetries: 3
+  zkNode: biz
+
+logging:
+  pattern:
+    console: '%d{yyyy-MM-dd HH:mm:ss.SSS} [trace=%X{X-Trace-Id:-},span=%X{X-Span-Id:-}] [%15.15t] %-40.40logger{39}: %m%n'
+
+server:
+  port: 3362
+
+#sample:
+#  zipkin:
+#    # When enabled=false, traces log to the console. Comment to send to zipkin
+#    enabled: true

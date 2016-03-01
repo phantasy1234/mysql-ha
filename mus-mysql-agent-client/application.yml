@@ -1,0 +1,17 @@
+zookeeper:
+  zkServer: localhost:2181
+  sessionTimeoutMs: 10000
+  connectionTimeoutMs: 10000
+  baseSleepTimeMs: 1000
+  maxRetries: 3
+  zkNode: mysql/health
+mysql:
+  host: 127.0.0.1
+  port: 3306
+  user: root
+  password: 123
+  dataSourceClassName: com.mysql.jdbc.jdbc2.optional.MysqlDataSource
+  database: sys
+  execSql: select * from schema_table_statistics
+  connectionTimeoutMs: 5000
+waitTimeMs: 5000
